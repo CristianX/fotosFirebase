@@ -33,7 +33,7 @@ export class NgDropFilesDirective {
   // Para cuando se solto la imagen
   @HostListener( 'drop', ['$event'] )
   public onDrop( event: any ) {
-    
+
 
     const transferencia = this._getTransferencia( event );
 
@@ -42,7 +42,7 @@ export class NgDropFilesDirective {
     }
 
     this._extraerArchivos( transferencia.files );
-    
+
     this._prevenirDetener( event );
 
     this.mouseSobre.emit( false );
