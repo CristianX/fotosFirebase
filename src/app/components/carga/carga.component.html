@@ -2,7 +2,10 @@
     <div class="col-md-4">
         <h3>Seleccione Archivos</h3>
         <!-- drop zone está en los styles.css; well es una sección encerrada; file-over vuelve el límite de área azul -->
-        <div class="well drop-zone file-over">
+        <!-- Poniendo directiva al div a controlar -->
+        <!-- ngClass activa o desactiva la funcion file-over mediante la variable booleana estaSobreElemento -->
+        <!--mouseSobre es la variable Output declarada en la directiva -->
+        <div appNgDropFiles [archivos]="archivos" (mouseSobre)="estaSobreElemento = $event" [ngClass]="{'file-over': estaSobreElemento}" class="well drop-zone file-over">
             <h4>Deje caer aquí los arvhivos</h4>
             <img src="assets\drop-images.png">
         </div>
@@ -13,7 +16,7 @@
         <button class="btn btn-outline-danger">Limpiar</button>
 
         <table class="table">
-            <thead class="thead=dark">
+            <thead class="thead-dark">
                 <tr>
                     <th>Nombre archivo</th>
                     <th>Tamaño</th>

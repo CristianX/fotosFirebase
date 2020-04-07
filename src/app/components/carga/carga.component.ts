@@ -11,6 +11,9 @@ export class CargaComponent implements OnInit {
 
   archivos: FileItemModule[] = [];
 
+  // Identificar cuando el mouse esta haciendo un drop o drag
+  estaSobreElemento = false;
+
   // tslint:disable-next-line: variable-name
   constructor( public _cargaImagenes: CargaImagenesService ) { }
 
@@ -19,6 +22,10 @@ export class CargaComponent implements OnInit {
 
   cargarImagenes() {
     this._cargaImagenes.cargarImagenesFirebase( this.archivos );
+  }
+
+  pruebaSobreElemento( event ) {
+    console.log( event );
   }
 
 }
